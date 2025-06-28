@@ -13,9 +13,9 @@ This project provides comprehensive examples and verification tests for understa
 | Icon | Name | Version | Notes |
 |------|------|---------|-------|
 | <img src="https://mochajs.org/images/mocha-logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Mocha](https://mochajs.org/) | - | Classic JavaScript test framework |
-| 🃏 | [Jest](https://jestjs.io/) | - | Popular React testing framework |
-| ⚡ | [Vitest](https://vitest.dev/) | - | Fast Vite-native test runner |
-| 🍞 | [Bun test](https://bun.sh/docs/cli/test) | - | Built-in Bun test runner |
+| <img src="https://archive.jestjs.io/img/jest.svg" alt="mocha logo" style="height: 1rem;" /> | [Jest](https://jestjs.io/) | - | Popular React testing framework |
+| <img src="https://vitest.dev/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Vitest](https://vitest.dev/) | - | Fast Vite-native test runner |
+| <img src="https://bun.sh/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Bun test](https://bun.sh/docs/cli/test) | - | Built-in Bun test runner |
 
 ## Purpose
 
