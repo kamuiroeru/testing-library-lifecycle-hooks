@@ -109,9 +109,9 @@ graph TD
         O --> P[End Test Suite]
     end
 
-    style A fill:#90EE90
-    style P fill:#FFB6C1
-    style I fill:#87CEEB
+    style A fill:green
+    style P fill:red
+    style I fill:blue
 ```
 
 ### Execution Order Visualization
@@ -170,8 +170,8 @@ graph TD
         D2 --> E2[test in nested]
     end
 
-    style D1 fill:#FFB6C1
-    style A2 fill:#FFB6C1
+    style D1 fill:red
+    style A2 fill:red
 ```
 
 ### Execution Order for Nested Tests
