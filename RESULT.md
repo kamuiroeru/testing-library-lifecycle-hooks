@@ -1,3 +1,5 @@
+<!-- cspell:ignore texttt TLBE -->
+
 # Test Framework Lifecycle Hooks Execution Order Comparison
 
 ## Test Structure
@@ -158,8 +160,8 @@ This diagram shows how:
 graph TD
     subgraph "❌ What You Might Expect"
         A1[top-level beforeEach] --> B1[main beforeEach]
-        B1 --> C1[nested beforeEach]
-        C1 --> D1[nested beforeAll]
+        B1 --> C1[nested beforeAll]
+        C1 --> D1[nested beforeEach]
         D1 --> E1[test in nested]
     end
 
@@ -170,7 +172,7 @@ graph TD
         D2 --> E2[test in nested]
     end
 
-    style D1 fill:red
+    style C1 fill:red
     style A2 fill:red
 ```
 
