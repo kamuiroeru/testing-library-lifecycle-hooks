@@ -1,0 +1,22 @@
+{
+  "name": "testing-library-lifecycle-hooks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "mochaChai": "mocha lifecycleHook/mochaChai.test.js",
+    "vitest": "vitest --globals --run lifecycleHook/base.test.js",
+    "jest": "jest lifecycleHook/base.test.js",
+    "buntest": "bun test lifecycleHook/base.test.js"
+  },
+  "dependencies": {
+    "chai": "^5.2.0",
+    "jest": "^30.0.3",
+    "mocha": "^11.7.1",
+    "vitest": "^3.2.4"
+  }
+}
