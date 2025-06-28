@@ -14,15 +14,15 @@ The following test structure is used across all frameworks:
     - beforeEach
     - afterEach
     - afterAll/after
-    - Test 1
-    - Test 2
+    - 🧪 Main Test 01
+    - 🧪 Main Test 02
     - **<span style="color: #E85D75">Nested describe block</span>**
       - beforeAll/before
       - beforeEach
       - afterEach
       - afterAll/after
-      - Test 1
-      - Test 2
+      - 🧪 Nested Test 01
+      - 🧪 Nested Test 02
 
 ## Execution Order Table
 
@@ -64,10 +64,10 @@ The following test structure is used across all frameworks:
 ### Test Execution Order Patterns
 1. **Mocha**: Tests run in strict order within their describe blocks
    - **main test 01** → **main test 02** → **nested test 01** → **nested test 02**
-   
+
 2. **Jest & Vitest**: Tests run with nested tests executing before remaining main tests
    - **main test 01** → **nested test 01** → **nested test 02** → **main test 02**
-   
+
 3. **Bun**: All nested tests execute first, then all main tests
    - **nested test 01** → **nested test 02** → **main test 01** → **main test 02**
 
