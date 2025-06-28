@@ -7,25 +7,45 @@ const wait = async () =>
 
 beforeAll(async () => {
   await wait();
-  console.log("main beforeAll", ++counter);
+  console.log("top-level beforeAll", ++counter);
 });
 
 beforeEach(async () => {
   await wait();
-  console.log("main beforeEach", ++counter);
+  console.log("top-level beforeEach", ++counter);
 });
 
 afterEach(async () => {
   await wait();
-  console.log("main afterEach", ++counter);
+  console.log("top-level afterEach", ++counter);
 });
 
 afterAll(async () => {
   await wait();
-  console.log("main afterAll", ++counter);
+  console.log("top-level afterAll", ++counter);
 });
 
 describe("callback hook test", () => {
+  beforeAll(async () => {
+    await wait();
+    console.log("main beforeAll", ++counter);
+  });
+
+  beforeEach(async () => {
+    await wait();
+    console.log("main beforeEach", ++counter);
+  });
+
+  afterEach(async () => {
+    await wait();
+    console.log("main afterEach", ++counter);
+  });
+
+  afterAll(async () => {
+    await wait();
+    console.log("main afterAll", ++counter);
+  });
+
   it("main test 01", async () => {
     await wait();
     console.log("main test 01 counter = ", counter);
