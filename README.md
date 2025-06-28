@@ -1,5 +1,7 @@
 # Testing Library Lifecycle Hooks
 
+https://github.com/kamuiroeru/testing-library-lifecycle-hooks/actions/workflows/run-all-scripts.yml/badge.svg
+
 A repository for verifying and demonstrating the execution order of lifecycle hooks in JavaScript and TypeScript testing frameworks.
 
 ## Overview
