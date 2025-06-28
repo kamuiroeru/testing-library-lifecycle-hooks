@@ -6,12 +6,16 @@ A repository for verifying and demonstrating the execution order of lifecycle ho
 
 ## Overview
 
-This project provides comprehensive examples and verification tests for understanding how lifecycle hooks (such as `beforeAll`, `beforeEach`, `afterEach`, `afterAll`) execute in popular JavaScript/TypeScript testing frameworks including:
+This project provides comprehensive examples and verification tests for understanding how lifecycle hooks (such as `beforeAll`, `beforeEach`, `afterEach`, `afterAll`) execute in popular JavaScript/TypeScript testing frameworks.
 
-- [Mocha](https://mochajs.org/) - [![Mocha Tests](https://example.com/mocha-badge)](https://example.com/mocha-actions)
-- [Jest](https://jestjs.io/) - [![Jest Tests](https://example.com/jest-badge)](https://example.com/jest-actions)
-- [Vitest](https://vitest.dev/) - [![Vitest Tests](https://example.com/vitest-badge)](https://example.com/vitest-actions)
-- [Bun test](https://bun.sh/docs/cli/test) - [![Bun Tests](https://example.com/bun-badge)](https://example.com/bun-actions)
+### Supported Testing Frameworks
+
+| Icon | Name | Version | Notes |
+|------|------|---------|-------|
+| <img src="https://mochajs.org/images/mocha-logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Mocha](https://mochajs.org/) | - | Classic JavaScript test framework |
+| 🃏 | [Jest](https://jestjs.io/) | - | Popular React testing framework |
+| ⚡ | [Vitest](https://vitest.dev/) | - | Fast Vite-native test runner |
+| 🍞 | [Bun test](https://bun.sh/docs/cli/test) | - | Built-in Bun test runner |
 
 ## Purpose
 
