@@ -4,19 +4,19 @@
 
 The following test structure is used across all frameworks:
 
-- **<span style="color: #4A90E2">Top-level</span>**
+- **$\texttt{\color{#4A90E2}Top-level}$**
   - beforeAll/before
   - beforeEach
   - afterEach
   - afterAll/after
-  - **<span style="color: #7CB342">Main describe block</span>**
+  - **$\texttt{\color{#7CB342}Main describe block}$**
     - beforeAll/before
     - beforeEach
     - afterEach
     - afterAll/after
     - 🧪 Main Test 01
     - 🧪 Main Test 02
-    - **<span style="color: #E85D75">Nested describe block</span>**
+    - **$\texttt{\color{#E85D75}Nested describe block}$**
       - beforeAll/before
       - beforeEach
       - afterEach
@@ -28,32 +28,32 @@ The following test structure is used across all frameworks:
 
 | Order | Mocha | Jest | Vitest | Bun |
 |------|-------|------|--------|-----|
-| 1 | <span style="color: #4A90E2">top-level</span> before | <span style="color: #4A90E2">top-level</span> beforeAll | <span style="color: #4A90E2">top-level</span> beforeAll | <span style="color: #4A90E2">top-level</span> beforeAll |
-| 2 | <span style="color: #7CB342">main</span> before | <span style="color: #7CB342">main</span> beforeAll | <span style="color: #7CB342">main</span> beforeAll | <span style="color: #7CB342">main</span> beforeAll |
-| 3 | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #E85D75">nested</span> beforeAll |
-| 4 | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 01** | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 01** | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 01** | <span style="color: #4A90E2">top-level</span> beforeEach |
-| 5 | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> beforeEach |
-| 6 | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 01** |
-| 7 | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #E85D75">nested</span> beforeAll | <span style="color: #E85D75">nested</span> beforeAll | <span style="color: #E85D75">nested</span> afterEach |
-| 8 | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 02** | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #7CB342">main</span> afterEach |
-| 9 | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #4A90E2">top-level</span> afterEach |
-| 10 | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 01** | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 01** | <span style="color: #4A90E2">top-level</span> beforeEach |
-| 11 | <span style="color: #E85D75">nested</span> before | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #7CB342">main</span> beforeEach |
-| 12 | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 02** |
-| 13 | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #E85D75">nested</span> afterEach |
-| 14 | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 01** | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #7CB342">main</span> afterEach |
-| 15 | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #4A90E2">top-level</span> afterEach |
-| 16 | <span style="color: #7CB342">main</span> afterEach | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 02** | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 02** | <span style="color: #E85D75">nested</span> afterAll |
-| 17 | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #4A90E2">top-level</span> beforeEach |
-| 18 | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 01** |
-| 19 | <span style="color: #7CB342">main</span> beforeEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #7CB342">main</span> afterEach |
-| 20 | <span style="color: #E85D75">nested</span> beforeEach<br>→ 🧪 **nested test 02** | <span style="color: #E85D75">nested</span> afterAll | <span style="color: #E85D75">nested</span> afterAll | <span style="color: #4A90E2">top-level</span> afterEach |
-| 21 | <span style="color: #E85D75">nested</span> afterEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach | <span style="color: #4A90E2">top-level</span> beforeEach |
-| 22 | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 02** | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 02** | <span style="color: #7CB342">main</span> beforeEach<br>→ 🧪 **main test 02** |
-| 23 | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach | <span style="color: #7CB342">main</span> afterEach |
-| 24 | <span style="color: #E85D75">nested</span> after | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach | <span style="color: #4A90E2">top-level</span> afterEach |
-| 25 | <span style="color: #7CB342">main</span> after | <span style="color: #7CB342">main</span> afterAll | <span style="color: #7CB342">main</span> afterAll | <span style="color: #7CB342">main</span> afterAll |
-| 26 | <span style="color: #4A90E2">top-level</span> after | <span style="color: #4A90E2">top-level</span> afterAll | <span style="color: #4A90E2">top-level</span> afterAll | <span style="color: #4A90E2">top-level</span> afterAll |
+| 1 | $\texttt{\color{#4A90E2}top-level}$ before | $\texttt{\color{#4A90E2}top-level}$ beforeAll | $\texttt{\color{#4A90E2}top-level}$ beforeAll | $\texttt{\color{#4A90E2}top-level}$ beforeAll |
+| 2 | $\texttt{\color{#7CB342}main}$ before | $\texttt{\color{#7CB342}main}$ beforeAll | $\texttt{\color{#7CB342}main}$ beforeAll | $\texttt{\color{#7CB342}main}$ beforeAll |
+| 3 | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#E85D75}nested}$ beforeAll |
+| 4 | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 01** | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 01** | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 01** | $\texttt{\color{#4A90E2}top-level}$ beforeEach |
+| 5 | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach |
+| 6 | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 01** |
+| 7 | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#E85D75}nested}$ beforeAll | $\texttt{\color{#E85D75}nested}$ beforeAll | $\texttt{\color{#E85D75}nested}$ afterEach |
+| 8 | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 02** | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#7CB342}main}$ afterEach |
+| 9 | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ afterEach |
+| 10 | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 01** | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 01** | $\texttt{\color{#4A90E2}top-level}$ beforeEach |
+| 11 | $\texttt{\color{#E85D75}nested}$ before | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach |
+| 12 | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 02** |
+| 13 | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#E85D75}nested}$ afterEach |
+| 14 | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 01** | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#7CB342}main}$ afterEach |
+| 15 | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ afterEach |
+| 16 | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 02** | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 02** | $\texttt{\color{#E85D75}nested}$ afterAll |
+| 17 | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach |
+| 18 | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 01** |
+| 19 | $\texttt{\color{#7CB342}main}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach |
+| 20 | $\texttt{\color{#E85D75}nested}$ beforeEach<br>→ 🧪 **nested test 02** | $\texttt{\color{#E85D75}nested}$ afterAll | $\texttt{\color{#E85D75}nested}$ afterAll | $\texttt{\color{#4A90E2}top-level}$ afterEach |
+| 21 | $\texttt{\color{#E85D75}nested}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach | $\texttt{\color{#4A90E2}top-level}$ beforeEach |
+| 22 | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 02** | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 02** | $\texttt{\color{#7CB342}main}$ beforeEach<br>→ 🧪 **main test 02** |
+| 23 | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach | $\texttt{\color{#7CB342}main}$ afterEach |
+| 24 | $\texttt{\color{#E85D75}nested}$ after | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach | $\texttt{\color{#4A90E2}top-level}$ afterEach |
+| 25 | $\texttt{\color{#7CB342}main}$ after | $\texttt{\color{#7CB342}main}$ afterAll | $\texttt{\color{#7CB342}main}$ afterAll | $\texttt{\color{#7CB342}main}$ afterAll |
+| 26 | $\texttt{\color{#4A90E2}top-level}$ after | $\texttt{\color{#4A90E2}top-level}$ afterAll | $\texttt{\color{#4A90E2}top-level}$ afterAll | $\texttt{\color{#4A90E2}top-level}$ afterAll |
 
 ## Key Differences
 
