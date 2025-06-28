@@ -12,10 +12,10 @@ This project provides comprehensive examples and verification tests for understa
 
 | Icon | Name | Version | Notes |
 |------|------|---------|-------|
-| <img src="https://mochajs.org/images/mocha-logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Mocha](https://mochajs.org/) | - | Classic JavaScript test framework |
-| <img src="https://archive.jestjs.io/img/jest.svg" alt="mocha logo" style="height: 1rem;" /> | [Jest](https://jestjs.io/) | - | Popular React testing framework |
-| <img src="https://vitest.dev/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Vitest](https://vitest.dev/) | - | Fast Vite-native test runner |
-| <img src="https://bun.sh/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Bun test](https://bun.sh/docs/cli/test) | - | Built-in Bun test runner |
+| <img src="https://mochajs.org/images/mocha-logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Mocha](https://mochajs.org/) | 11.7.1 | Classic JavaScript test framework |
+| <img src="https://archive.jestjs.io/img/jest.svg" alt="mocha logo" style="height: 1rem;" /> | [Jest](https://jestjs.io/) | 30.0.2 | Popular React testing framework |
+| <img src="https://vitest.dev/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Vitest](https://vitest.dev/) | 3.2.4 | Fast Vite-native test runner |
+| <img src="https://bun.sh/logo.svg" alt="mocha logo" style="height: 1rem;" /> | [Bun test](https://bun.sh/docs/cli/test) | 1.2.17 | Built-in Bun test runner |
 
 ## Purpose
 
