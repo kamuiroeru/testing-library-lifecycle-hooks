@@ -2,6 +2,8 @@
 
 [![Github Actions Status Badge](https://github.com/kamuiroeru/testing-library-lifecycle-hooks/actions/workflows/run-all-scripts.yml/badge.svg)](https://github.com/kamuiroeru/testing-library-lifecycle-hooks/actions/workflows/run-all-scripts.yml)
 
+[日本語版](/README_ja.md)
+
 A repository for verifying and demonstrating the execution order of lifecycle hooks in JavaScript and TypeScript testing frameworks.
 
 ## Overview
@@ -24,6 +26,9 @@ Understanding the precise execution order of lifecycle hooks is crucial for:
 - Proper test setup and teardown
 - Debugging test issues
 - Optimizing test performance
+
+## Result Summary
+- [RESULT.md](/RESULT.md)
 
 ## Repository Structure
 

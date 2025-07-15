@@ -2,6 +2,8 @@
 
 [![Github Actions Status Badge](https://github.com/kamuiroeru/testing-library-lifecycle-hooks/actions/workflows/run-all-scripts.yml/badge.svg)](https://github.com/kamuiroeru/testing-library-lifecycle-hooks/actions/workflows/run-all-scripts.yml)
 
+[English version](/README.md)
+
 JavaScript および TypeScript テストフレームワークにおけるライフサイクルフックの実行順序を検証・実演するためのリポジトリです。
 
 ## 概要
@@ -24,6 +26,9 @@ JavaScript および TypeScript テストフレームワークにおけるライ
 - 適切なテストのセットアップとクリーンアップ
 - テストの問題のデバッグ
 - テストパフォーマンスの最適化
+
+## 調査結果
+- [RESULT_ja.md](/RESULT_ja.md)
 
 ## リポジトリ構造
 
