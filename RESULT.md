@@ -63,24 +63,26 @@ The following test structure is used across all frameworks:
 
 ## Key Differences
 
-### Hook Naming
-- **Mocha**: Uses `before`, `after`, `beforeEach`, `afterEach`
-- **Jest/Vitest/Bun**: Uses `beforeAll`, `afterAll`, `beforeEach`, `afterEach`
+### Common Behaviors
+- All frameworks maintain the basic order: `beforeAll` → `beforeEach` → `test` → `afterEach` → `afterAll`
+- In hierarchical structures, setup hooks execute from outer to inner scope, while cleanup hooks execute from inner to outer scope
 
-### Test Execution Order Patterns
-1. **Mocha**: Tests run in strict order within their describe blocks
-   - **$\texttt{\color{#7CB342}main}$ test 01** → **$\texttt{\color{#7CB342}main}$ test 02** → **$\texttt{\color{#E85D75}nested}$ test 01** → **$\texttt{\color{#E85D75}nested}$ test 02**
+### Differences
 
-2. **Jest & Vitest**: Tests run with nested tests executing before remaining main tests
-   - **$\texttt{\color{#7CB342}main}$ test 01** → **$\texttt{\color{#E85D75}nested}$ test 01** → **$\texttt{\color{#E85D75}nested}$ test 02** → **$\texttt{\color{#7CB342}main}$ test 02**
+#### 1. **Mocha**
+- Uses `before`/`after` hooks
+- Test execution order: $\texttt{\color{#7CB342}main}$ tests → $\texttt{\color{#E85D75}nested}$ tests
+  - Outer tests run first
 
-3. **Bun**: All nested tests execute first, then all main tests
-   - **$\texttt{\color{#E85D75}nested}$ test 01** → **$\texttt{\color{#E85D75}nested}$ test 02** → **$\texttt{\color{#7CB342}main}$ test 01** → **$\texttt{\color{#7CB342}main}$ test 02**
+#### 2. **Jest/Vitest**
+- Uses `beforeAll`/`afterAll` hooks
+- Test execution order: $\texttt{\color{#7CB342}main}$ test 01 → $\texttt{\color{#E85D75}nested}$ tests → $\texttt{\color{#7CB342}main}$ test 02
+  - Tests execute in the order they are defined in the code
 
-### Hook Execution Order Patterns
-1. **Jest & Vitest**: Nearly identical execution order - runs outer `beforeAll` hooks first, then processes tests with nested hooks in sequence
-2. **Bun**: Similar to Jest/Vitest but executes nested `beforeAll` earlier (step 3)
-3. **Mocha**: Executes main tests first, then nested tests, with all their respective `before` hooks
+#### 3. **Bun Test**
+- Uses `beforeAll`/`afterAll` hooks
+- Test execution order: $\texttt{\color{#E85D75}nested}$ tests → $\texttt{\color{#7CB342}main}$ tests
+  - Inner tests run first
 
 ### Notable Behaviors
 - All frameworks execute hooks from outer to inner scope for `beforeEach` and inner to outer for `afterEach`

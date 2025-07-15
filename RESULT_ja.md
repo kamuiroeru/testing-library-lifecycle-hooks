@@ -63,24 +63,26 @@
 
 ## 主な違い
 
-### フック名の違い
-- **Mocha**: `before`, `after`, `beforeEach`, `afterEach` を使用
-- **Jest/Vitest/Bun**: `beforeAll`, `afterAll`, `beforeEach`, `afterEach` を使用
+### 共通点
+- 全てのフレームワークで `beforeAll` → `beforeEach` → `test` → `afterEach` → `afterAll` の基本的な順序は守られている
+- 階層構造では外側から内側へ setup hooks が実行され、内側から外側へ cleanup hooks が実行される
 
-### テスト実行順序パターン
-1. **Mocha**: テストはdescribeブロック内で厳密な順序で実行される
-   - **$\texttt{\color{#7CB342}メイン}$ テスト 01** → **$\texttt{\color{#7CB342}メイン}$ テスト 02** → **$\texttt{\color{#E85D75}ネスト}$ テスト 01** → **$\texttt{\color{#E85D75}ネスト}$ テスト 02**
+### 差分
 
-2. **Jest & Vitest**: ネストされたテストが残りのメインテストより先に実行される
-   - **$\texttt{\color{#7CB342}メイン}$ テスト 01** → **$\texttt{\color{#E85D75}ネスト}$ テスト 01** → **$\texttt{\color{#E85D75}ネスト}$ テスト 02** → **$\texttt{\color{#7CB342}メイン}$ テスト 02**
+#### 1. **Mocha**
+- `before`/`after` フックを使用
+- テスト実行順序: $\texttt{\color{#7CB342}main}$ tests → $\texttt{\color{#E85D75}nested}$ tests
+  - 外側が先
 
-3. **Bun**: すべてのネストテストが最初に実行され、その後すべてのメインテストが実行される
-   - **$\texttt{\color{#E85D75}ネスト}$ テスト 01** → **$\texttt{\color{#E85D75}ネスト}$ テスト 02** → **$\texttt{\color{#7CB342}メイン}$ テスト 01** → **$\texttt{\color{#7CB342}メイン}$ テスト 02**
+#### 2. **Jest/Vitest**
+- `beforeAll`/`afterAll` フックを使用
+- テスト実行順序: $\texttt{\color{#7CB342}main}$ test 01 → $\texttt{\color{#E85D75}nested}$ tests → $\texttt{\color{#7CB342}main}$ test 02
+  - コードに定義した順番で上から実行される
 
-### フック実行順序パターン
-1. **Jest & Vitest**: ほぼ同一の実行順序 - 外側の `beforeAll` フックを最初に実行し、その後ネストされたフックとともにテストを順次処理
-2. **Bun**: Jest/Vitestと似ているが、ネストされた `beforeAll` がより早く（ステップ3で）実行される
-3. **Mocha**: メインテストを最初に実行し、その後ネストされたテストを、それぞれの `before` フックとともに実行
+#### 3. **Bun Test**
+- `beforeAll`/`afterAll` フックを使用
+- テスト実行順序: $\texttt{\color{#E85D75}nested}$ tests → $\texttt{\color{#7CB342}main}$ tests
+  - 内側が先
 
 ### 注目すべき動作
 - すべてのフレームワークで、`beforeEach` は外側から内側のスコープへ、`afterEach` は内側から外側へフックを実行する
